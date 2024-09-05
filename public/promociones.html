@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/imagenes/icono pagina.png">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+
+        .container-ofertas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; /* Espacio entre las imágenes */
+            justify-content: center; /* Centra las imágenes */
+            padding: 20px;
+            background-color: #fff; /* Fondo blanco para el contenedor */
+            border-radius: 10px; /* Bordes redondeados del contenedor */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra del contenedor */
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .container-ofertas h1 {
+            width: 100%;
+            text-align: center;
+            color: #210D65;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .ofertas {
+            flex: 1 1 calc(25% - 20px); /* Cada imagen ocupa el 25% del ancho del contenedor menos el espacio del gap */
+            box-sizing: border-box; /* Incluye el padding y el border en el cálculo del ancho */
+        }
+
+        .ofertas img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .ofertas img:hover {
+            transform: scale(1.05); /* Zoom ligero en hover */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada en hover */
+        }
+
+        @media (max-width: 768px) {
+            .ofertas {
+                flex: 1 1 calc(50% - 20px); /* Cada imagen ocupa el 50% del ancho del contenedor menos el espacio del gap */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .ofertas {
+                flex: 1 1 100%; /* Cada imagen ocupa el 100% del ancho del contenedor en pantallas muy pequeñas */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-ofertas">
+        <h1>SUPER OFERTAS MERCAHORRO</h1>
+        <div class="ofertas">
+            <img src="assets/imagenes/promo 1.jpeg" alt="Promo 1">
+        </div>
+        <div class="ofertas">
+            <img src="assets/imagenes/promo 2.jpeg" alt="Promo 2">
+        </div>
+        <div class="ofertas">
+            <img src="assets/imagenes/promo 3.jpeg" alt="Promo 3">
+        </div>
+        <div class="ofertas">
+            <img src="assets/imagenes/promo 4.jpeg" alt="Promo 4">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Postulación</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .form-container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="date"], select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .submit-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .submit-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form action="db.php" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="fecha-postulacion">Fecha de Postulación:</label>
+                <input type="date" id="fecha-postulacion" name="fecha-postulacion" required>
+            </div>
+            <div class="form-group">
+                <label for="nombre-apellido">Nombre y Apellido:</label>
+                <input type="text" id="nombre-apellido" name="nombre-apellido" required>
+            </div>
+            <div class="form-group">
+                <label for="nivel-educativo">Nivel Educativo:</label>
+                <select id="nivel-educativo" name="nivel-educativo" required>
+                    <option value="" disabled selected>Seleccione su nivel educativo</option>
+                    <option value="primaria">Primaria culminada</option>
+                    <option value="bachiller">Bachiller culminado</option>
+                    <option value="Estudiante">Estudiante</option>
+                    <option value="tecnico">Técnico</option>
+                    <option value="tecnologo">Tecnólogo</option>
+                    <option value="Profesional">Profesional</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="cargo">Seleccione el Cargo al cual se quiere presentar:</label>
+                <select id="cargo" name="cargo" required>
+                    <option value="" disabled selected>Seleccione un cargo</option>
+                    <option value="cajera">Cajera (o)</option>
+                    <option value="surtidor">Surtidor</option>
+                    <option value="empacador">Empacador</option>
+                    <option value="domiciliario-surtidor">Domiciliario Surtidor</option>
+                    <option value="auxiliar-bodega">Auxiliar de Bodega</option>
+                    <option value="monitor-servicio">Monitor de Servicio</option>
+                    <option value="cajera-pac">Cajera Pac</option>
+                    <option value="formador">Formador</option>
+                    <option value="administrador-punto">Administrador de Punto</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="telefono">Número de contacto:</label>
+                <input type="text" id="telefono" name="telefono" required>
+            </div>
+            <div class="form-group">
+                <label for="genero">Género:</label>
+                <select id="genero" name="genero" required>
+                    <option value="" disabled selected>Seleccione su género</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="pais-domicilio">País de Domicilio:</label>
+                <input type="text" id="pais-domicilio" name="pais-domicilio" required>
+            </div>
+            <div class="form-group">
+                <label for="ciudad-domicilio">Ciudad de Domicilio:</label>
+                <input type="text" id="ciudad-domicilio" name="ciudad-domicilio" required>
+            </div>
+            <div class="form-group">
+                <label for="zona-residencia">Zona de Residencia:</label>
+                <select id="zona-residencia" name="zona-residencia" required>
+                    <option value="" disabled selected>Seleccione su zona de residencia</option>
+                    <option value="urbana">Urbana</option>
+                    <option value="rural">Rural</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="barrio">Barrio:</label>
+                <input type="text" id="barrio" name="barrio" required>
+            </div>
+            <div class="form-group">
+                <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
+                <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" required>
+            </div>
+            <div class="form-group">
+                <label for="tipo-documento">Tipo de Documento de Identidad:</label>
+                <select id="tipo-documento" name="tipo-documento" required>
+                    <option value="" disabled selected>Seleccione su tipo de documento</option>
+                    <option value="cedula">Cédula de Ciudadanía</option>
+                    <option value="cedula_extranjeria">Cédula de Extranjería</option>
+                    <option value="pasaporte">Pasaporte</option>
+                    <option value="permiso">Permiso Especial de Permanencia</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="recomendado">¿Quién lo recomienda?</label>
+                <input type="text" id="recomendado" name="recomendado" required>
+            </div>
+            <div class="form-group">
+                <label for="hoja-vida">Adjuntar Hoja de Vida:</label>
+                <input type="file" id="hoja-vida" name="hoja-vida" accept=".pdf,.doc,.docx" required>
+            </div>
+            <button type="submit" class="submit-button">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>

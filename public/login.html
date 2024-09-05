@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="assets/imagenes/icono pagina.png">
+  
+  <!-- SweetAlert2 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  
+  <!-- SweetAlert2 JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <title>Página de Inicio de Sesión</title>
+  
+</head>
+
+
+
+<style>
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #F5F5F5; /* Fondo gris claro */
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  background-color: #210D65; /* Azul oscuro */
+  color: #FFFFFF; /* Texto blanco */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-sizing: border-box; /* Incluir padding en el ancho total */
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espacio consistente entre elementos */
+}
+
+label {
+  text-align: left;
+  font-size: 14px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  padding: 12px;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
+  background-color: #F0F0F0;
+  color: #000;
+  font-size: 16px; /* Tamaño de fuente adaptable */
+}
+
+button {
+  background-color: #89DC00; /* Verde brillante */
+  color: #210D65;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #76C700; /* Verde más oscuro */
+}
+
+p {
+  margin-top: 15px;
+}
+
+a {
+  color: #89DC00; /* Verde brillante */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+  .login-container {
+    padding: 15px;
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+  }
+
+  h2 {
+    font-size: 20px; /* Tamaño de fuente ajustado para pantallas pequeñas */
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="email"] {
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+  }
+
+  button {
+    font-size: 14px; /* Tamaño del botón más pequeño */
+  }
+}
+
+</style>
+<body>
+  <div class="login-container">
+    <h2>Inicio de sesión</h2>
+    <form>
+      <label for="username">Correo:</label>
+      <input type="text" id="emaillog" name="username" required>
+      <br>
+      <label for="password">Contraseña:</label>
+      <input type="password" id="passwordlog" name="password" required>
+      <br>
+      <button type="submit" id="login">Ingresar</button>
+      <button type="button" id="cerrar">Cerrar Sesión</button>
+    </form>
+    <p>¿No tienes una cuenta? <a href="registro.html">Regístrate aquí</a>.</p>
+  </div>
+  <script type="module" src="src/login.js"></script>
+</body>
+</html>
